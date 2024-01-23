@@ -1,9 +1,9 @@
-import { Button } from "@material-tailwind/react";
+import Navbar from "./components/Header/Navbar";
 
 const App = () => {
   return (
-    <div>
-      <Button>Button</Button>
+    <div className="">
+      <Navbar />
     </div>
   );
 };
