@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 interface IQuiz {
   module: string;
@@ -18,8 +18,16 @@ const initialState: IInitialState = {
 
 const quizSlice = createSlice({
   name: "quiz",
-  reducers: {},
+  reducers: {
+    addQuiz: (state, { payload }: PayloadAction<IQuiz>) => {
+      state.quiz.push(payload);
+    },
+  },
   initialState,
 });
 
+// this is for using different places
+export const { addQuiz } = quizSlice.actions;
+
+// this is for connecting with the store
 export default quizSlice.reducer;
