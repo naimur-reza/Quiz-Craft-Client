@@ -1,6 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {};
+interface IQuiz {
+  module: string;
+  question: string;
+  description: string;
+  options: [];
+  correctOptions: [];
+}
+
+interface IInitialState {
+  quiz: IQuiz[];
+}
+
+const initialState: IInitialState = {
+  quiz: [],
+};
 
 const quizSlice = createSlice({
   name: "quiz",
